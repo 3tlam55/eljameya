@@ -146,7 +146,7 @@ const QuranCompetitionPage: React.FC = () => {
                         <ul className="space-y-3">
                             <li className="flex items-center gap-3">
                                 <div className="w-2 h-2 bg-brand-gold rounded-full"></div>
-                                <p className="text-gray-700">العمر من 7 إلى 70 سنة</p>
+                                <p className="text-gray-700">العمر من 7 إلى 20 سنة</p>
                             </li>
                             <li className="flex items-center gap-3">
                                 <div className="w-2 h-2 bg-brand-gold rounded-full"></div>

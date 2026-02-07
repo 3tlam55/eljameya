@@ -75,6 +75,36 @@ const CompetitionResultsPage: React.FC = () => {
                     <div className="w-24 h-1 bg-brand-gold mx-auto mt-4 rounded-full" />
                 </motion.div>
 
+                {/* Sponsors Section */}
+                <motion.div
+                    className="mb-12"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                >
+                    <h2 className="text-3xl font-bold text-brand-blue text-center mb-8">
+                        رعاة المسابقة
+                    </h2>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+                        {sponsors.map((sponsor, index) => (
+                            <motion.div
+                                key={sponsor.id}
+                                className="bg-white rounded-xl shadow-lg p-6 flex items-center justify-center hover:shadow-2xl transition-all"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 0.3 + index * 0.1 }}
+                                whileHover={{ y: -5, scale: 1.05 }}
+                            >
+                                <img
+                                    src={sponsor.image}
+                                    alt={sponsor.name}
+                                    className="max-w-full max-h-24 object-contain"
+                                />
+                            </motion.div>
+                        ))}
+                    </div>
+                </motion.div>
+
                 {/* Search Section */}
                 <motion.div
                     className="max-w-3xl mx-auto mb-12"
@@ -174,147 +204,6 @@ const CompetitionResultsPage: React.FC = () => {
                         </motion.div>
                     )}
                 </AnimatePresence>
-
-                {/* Leaderboard */}
-                {showLeaderboard && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.4 }}
-                    >
-                        {/* Category Filter */}
-                        <div className="flex flex-wrap justify-center gap-3 mb-8">
-                            {categories.map((cat, index) => (
-                                <motion.button
-                                    key={cat}
-                                    onClick={() => setSelectedCategory(cat)}
-                                    className={`px-6 py-2 rounded-full text-sm font-bold transition-all border ${selectedCategory === cat
-                                        ? 'bg-brand-blue text-white border-brand-blue shadow-lg'
-                                        : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50 hover:border-brand-blue/50'
-                                        }`}
-                                    whileHover={{ scale: 1.05, y: -2 }}
-                                    whileTap={{ scale: 0.95 }}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.5 + index * 0.05 }}
-                                >
-                                    {cat}
-                                </motion.button>
-                            ))}
-                        </div>
-
-                        {/* Top 3 Podium */}
-                        <div className="max-w-5xl mx-auto mb-12">
-                            <h2 className="text-3xl font-bold text-brand-blue text-center mb-8">
-                                لوحة الشرف - المراكز الأولى
-                            </h2>
-                            <div className="grid md:grid-cols-3 gap-6">
-                                {filteredResults.slice(0, 3).map((result, index) => (
-                                    <motion.div
-                                        key={result.id}
-                                        className={`bg-gradient-to-br ${index === 0 ? 'from-amber-400 to-amber-600 md:order-2' :
-                                            index === 1 ? 'from-gray-300 to-gray-500 md:order-1' :
-                                                'from-amber-600 to-amber-800 md:order-3'
-                                            } text-white rounded-2xl p-6 shadow-2xl text-center ${index === 0 ? 'md:scale-110 md:mt-0' : 'md:mt-8'
-                                            }`}
-                                        initial={{ opacity: 0, y: 50 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ delay: 0.6 + index * 0.1 }}
-                                        whileHover={{ y: -5, scale: index === 0 ? 1.12 : 1.05 }}
-                                    >
-                                        <div className="mb-4">
-                                            {getRankIcon(result.rank)}
-                                        </div>
-                                        <h3 className="text-2xl font-bold mb-2">{result.name}</h3>
-                                        <p className="text-sm opacity-90 mb-2">{result.category}</p>
-                                        <div className="bg-white/20 backdrop-blur-sm rounded-lg py-2 px-4 inline-block">
-                                            <p className="text-3xl font-bold">{result.score}%</p>
-                                        </div>
-                                        <p className="text-sm mt-2 opacity-75">{result.city}</p>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Full Results Table */}
-                        <div className="max-w-6xl mx-auto">
-                            <h2 className="text-2xl font-bold text-brand-blue mb-6">جميع النتائج</h2>
-                            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-                                <div className="overflow-x-auto">
-                                    <table className="w-full">
-                                        <thead className="bg-brand-blue text-white">
-                                            <tr>
-                                                <th className="px-6 py-4 text-right">الترتيب</th>
-                                                <th className="px-6 py-4 text-right">الاسم</th>
-                                                <th className="px-6 py-4 text-right">الفئة</th>
-                                                <th className="px-6 py-4 text-right">المدينة</th>
-                                                <th className="px-6 py-4 text-right">الدرجة</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {filteredResults.map((result, index) => (
-                                                <motion.tr
-                                                    key={result.id}
-                                                    className="border-b border-gray-100 hover:bg-gray-50 transition-colors"
-                                                    initial={{ opacity: 0, x: -20 }}
-                                                    animate={{ opacity: 1, x: 0 }}
-                                                    transition={{ delay: 0.8 + index * 0.05 }}
-                                                >
-                                                    <td className="px-6 py-4">
-                                                        <div className="flex items-center gap-2">
-                                                            {result.rank <= 3 && getRankIcon(result.rank)}
-                                                            <span className="font-bold text-brand-blue">#{result.rank}</span>
-                                                        </div>
-                                                    </td>
-                                                    <td className="px-6 py-4 font-semibold">{result.name}</td>
-                                                    <td className="px-6 py-4 text-gray-600">{result.category}</td>
-                                                    <td className="px-6 py-4 text-gray-600">{result.city}</td>
-                                                    <td className="px-6 py-4">
-                                                        <span className="bg-brand-gold text-white px-3 py-1 rounded-full font-bold">
-                                                            {result.score}%
-                                                        </span>
-                                                    </td>
-                                                </motion.tr>
-                                            ))}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-                )}
-
-                {/* Sponsors Section */}
-                <motion.div
-                    className="mt-16"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.5 }}
-                >
-                    <h2 className="text-3xl font-bold text-brand-blue text-center mb-8">
-                        رعاة المسابقة
-                    </h2>
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
-                        {sponsors.map((sponsor, index) => (
-                            <motion.div
-                                key={sponsor.id}
-                                className="bg-white rounded-xl shadow-lg p-6 flex items-center justify-center hover:shadow-2xl transition-all"
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.6 + index * 0.1 }}
-                                whileHover={{ y: -5, scale: 1.05 }}
-                            >
-                                <img
-                                    src={sponsor.image}
-                                    alt={sponsor.name}
-                                    className="max-w-full max-h-24 object-contain"
-                                />
-                            </motion.div>
-                        ))}
-                    </div>
-                </motion.div>
             </div>
         </div>
     );

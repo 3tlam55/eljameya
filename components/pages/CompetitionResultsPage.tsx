@@ -76,11 +76,11 @@ const CompetitionResultsPage: React.FC = () => {
                     <h2 className="text-3xl font-bold text-brand-blue text-center mb-8">
                         رعاة المسابقة
                     </h2>
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
                         {sponsors.map((sponsor, index) => (
                             <motion.div
                                 key={sponsor.id}
-                                className="bg-white rounded-xl shadow-lg p-6 flex items-center justify-center hover:shadow-2xl transition-all"
+                                className="bg-white rounded-xl shadow-lg p-8 flex items-center justify-center hover:shadow-2xl transition-all"
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 0.3 + index * 0.1 }}
@@ -89,7 +89,7 @@ const CompetitionResultsPage: React.FC = () => {
                                 <img
                                     src={sponsor.image}
                                     alt={sponsor.name}
-                                    className="max-w-full max-h-24 object-contain"
+                                    className="max-w-full max-h-32 object-contain"
                                 />
                             </motion.div>
                         ))}

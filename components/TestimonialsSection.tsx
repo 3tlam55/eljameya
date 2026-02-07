@@ -284,51 +284,6 @@ const TestimonialsSection: React.FC = () => {
             </div>
           </div>
         </motion.div>
-
-        {/* All Testimonials Grid */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mt-16"
-          variants={containerVariants}
-        >
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.id}
-              className={`p-6 rounded-xl border-2 transition-all cursor-pointer ${
-                index === currentIndex
-                  ? 'border-brand-gold bg-brand-gold/10 shadow-lg'
-                  : 'border-gray-200 hover:border-brand-gold'
-              }`}
-              onClick={() => setCurrentIndex(index)}
-              whileHover={{ y: -5 }}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: (i) => ({
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    delay: i * 0.1,
-                    type: 'spring',
-                    stiffness: 100,
-                  },
-                }),
-              }}
-              custom={index}
-            >
-              <div className="text-center">
-                <motion.img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full mx-auto mb-3 border-2 border-brand-gold"
-                  whileHover={{ scale: 1.15 }}
-                />
-                <p className="font-bold text-gray-900">{testimonial.name}</p>
-                <p className="text-xs text-brand-blue font-semibold line-clamp-2">
-                  {testimonial.role}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </motion.section>
   );

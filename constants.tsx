@@ -6,6 +6,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'الرئيسية', href: '/' },
   { label: 'حاسبة الزكاة', href: '/zakat-calculator' },
   { label: 'احتياجات عاجلة', href: '/urgent-needs' },
+  { label: 'مسابقة القرآن', href: '/quran-competition' },
   { label: 'من نحن', href: '/about' },
   { label: 'خدماتنا', href: '/services' },
   { label: 'مواردنا', href: '/resources' },

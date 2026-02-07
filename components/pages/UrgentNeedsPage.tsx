@@ -127,21 +127,36 @@ const UrgentNeedsPage: React.FC = () => {
                             <motion.div
                                 key={case_.id}
                                 className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow"
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1 }}
+                                initial={{ opacity: 0, y: 20, rotateX: -15 }}
+                                animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                                transition={{ delay: index * 0.1, duration: 0.6 }}
+                                whileHover={{ y: -10, rotateY: 2, scale: 1.02 }}
+                                style={{ transformStyle: 'preserve-3d' }}
                             >
                                 {/* Image */}
                                 <div className="relative h-48 bg-gradient-to-br from-brand-blue to-brand-gold p-8">
-                                    <img
+                                    <motion.img
                                         src={case_.image}
                                         alt={case_.name}
                                         className="w-32 h-32 rounded-full mx-auto border-4 border-white shadow-lg"
+                                        whileHover={{ scale: 1.1, rotate: 5 }}
+                                        transition={{ duration: 0.3 }}
                                     />
-                                    <div className="absolute top-4 right-4 bg-brand-red text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1">
+                                    <motion.div
+                                        className="absolute top-4 right-4 bg-brand-red text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1 shadow-lg"
+                                        animate={{
+                                            scale: [1, 1.1, 1],
+                                            boxShadow: [
+                                                '0 4px 6px rgba(220, 38, 38, 0.3)',
+                                                '0 8px 12px rgba(220, 38, 38, 0.5)',
+                                                '0 4px 6px rgba(220, 38, 38, 0.3)'
+                                            ]
+                                        }}
+                                        transition={{ duration: 1.5, repeat: Infinity }}
+                                    >
                                         <Clock size={14} />
                                         {case_.daysLeft} يوم
-                                    </div>
+                                    </motion.div>
                                 </div>
 
                                 {/* Content */}
@@ -179,12 +194,23 @@ const UrgentNeedsPage: React.FC = () => {
 
                                     {/* Donate Button */}
                                     <motion.button
-                                        className="w-full bg-brand-red text-white py-3 rounded-lg font-bold hover:bg-red-700 transition-colors flex items-center justify-center gap-2"
-                                        whileHover={{ scale: 1.02 }}
-                                        whileTap={{ scale: 0.98 }}
+                                        className="w-full bg-brand-red text-white py-3 rounded-lg font-bold hover:bg-red-700 transition-colors flex items-center justify-center gap-2 relative overflow-hidden group"
+                                        whileHover={{ scale: 1.05, boxShadow: '0 10px 25px rgba(220, 38, 38, 0.4)' }}
+                                        whileTap={{ scale: 0.95 }}
                                     >
-                                        <Heart size={18} fill="currentColor" />
-                                        ساهم في العلاج
+                                        <motion.div
+                                            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                                            initial={{ x: '-100%' }}
+                                            whileHover={{ x: '100%' }}
+                                            transition={{ duration: 0.6 }}
+                                        />
+                                        <motion.div
+                                            animate={{ scale: [1, 1.2, 1] }}
+                                            transition={{ duration: 1, repeat: Infinity }}
+                                        >
+                                            <Heart size={18} fill="currentColor" />
+                                        </motion.div>
+                                        <span className="relative z-10">ساهم في العلاج</span>
                                     </motion.button>
                                 </div>
                             </motion.div>

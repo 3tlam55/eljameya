@@ -21,6 +21,9 @@ import BranchesPage from './components/pages/BranchesPage';
 import BloodBankPage from './components/pages/BloodBankPage';
 import MedicalComplexPage from './components/pages/MedicalComplexPage';
 import ContactPage from './components/pages/ContactPage';
+import QuranCompetitionPage from './components/pages/QuranCompetitionPage';
+import CompetitionResultsPage from './components/pages/CompetitionResultsPage';
+import ScrollToTop from './components/ScrollToTop';
 import { Heart, Phone } from 'lucide-react';
 
 const HomePage: React.FC = () => {
@@ -61,6 +64,7 @@ const HomePage: React.FC = () => {
 const App: React.FC = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/donate" element={
@@ -158,6 +162,26 @@ const App: React.FC = () => {
             <Navbar />
             <main className="flex-grow">
               <ContactPage />
+            </main>
+            <Footer />
+            <ChatWidget />
+          </div>
+        } />
+        <Route path="/quran-competition" element={
+          <div className="min-h-screen bg-white flex flex-col font-sans">
+            <Navbar />
+            <main className="flex-grow">
+              <QuranCompetitionPage />
+            </main>
+            <Footer />
+            <ChatWidget />
+          </div>
+        } />
+        <Route path="/competition-results" element={
+          <div className="min-h-screen bg-white flex flex-col font-sans">
+            <Navbar />
+            <main className="flex-grow">
+              <CompetitionResultsPage />
             </main>
             <Footer />
             <ChatWidget />

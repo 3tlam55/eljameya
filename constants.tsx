@@ -3,16 +3,16 @@ import { NavItem, NewsItem } from './types';
 import { Truck, Pill, Heart, Droplets, Recycle, Home, Users, BookOpen } from 'lucide-react';
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'الرئيسية', href: '#' },
-  { label: 'حاسبة الزكاة', href: '#zakat' },
-  { label: 'احتياجات عاجلة', href: '#urgent' },
-  { label: 'من نحن', href: '#about' },
-  { label: 'خدماتنا', href: '#services' },
-  { label: 'مواردنا', href: '#resources' },
-  { label: 'فروعنا', href: '#branches' },
-  { label: 'بنك الدم', href: '#blood-bank' },
-  { label: 'مجمع الإصلاح الطبي', href: '#medical' },
-  { label: 'تواصل معنا', href: '#contact' },
+  { label: 'الرئيسية', href: '/' },
+  { label: 'حاسبة الزكاة', href: '/zakat-calculator' },
+  { label: 'احتياجات عاجلة', href: '/urgent-needs' },
+  { label: 'من نحن', href: '/about' },
+  { label: 'خدماتنا', href: '/services' },
+  { label: 'مواردنا', href: '/resources' },
+  { label: 'فروعنا', href: '/branches' },
+  { label: 'بنك الدم', href: '/blood-bank' },
+  { label: 'مجمع الإصلاح الطبي', href: '/medical-complex' },
+  { label: 'تواصل معنا', href: '/contact' },
 ];
 
 export const PROJECTS: NewsItem[] = [

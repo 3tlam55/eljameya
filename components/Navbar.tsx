@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X, Search, Facebook, Twitter, Youtube, Instagram, Heart } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { NAV_ITEMS } from '../constants';
 
 const Navbar: React.FC = () => {
@@ -29,10 +29,10 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center gap-4">
-            <img 
-              src="https://upload.wikimedia.org/wikipedia/ar/2/23/%D8%B4%D8%B9%D8%A7%D8%B1_%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D9%8A%D8%A9_%D8%A7%D9%84%D8%B4%D8%B1%D8%B9%D9%8A%D8%A9.jpg" 
-              alt="شعار الجمعية الشرعية" 
-              className="w-24 h-24 object-contain shrink-0 mix-blend-multiply" 
+            <img
+              src="https://upload.wikimedia.org/wikipedia/ar/2/23/%D8%B4%D8%B9%D8%A7%D8%B1_%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D9%8A%D8%A9_%D8%A7%D9%84%D8%B4%D8%B1%D8%B9%D9%8A%D8%A9.jpg"
+              alt="شعار الجمعية الشرعية"
+              className="w-24 h-24 object-contain shrink-0 mix-blend-multiply"
             />
             <div className="hidden sm:flex flex-col">
               <h1 className="text-xl md:text-2xl font-bold text-brand-blue leading-none">الجمعية الشرعية</h1>
@@ -43,18 +43,18 @@ const Navbar: React.FC = () => {
           {/* Desktop Menu */}
           <nav className="hidden xl:flex items-center gap-2">
             {NAV_ITEMS.slice(0, 7).map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.href}
                 className="px-3 py-2 text-gray-700 font-semibold hover:text-brand-blue hover:bg-green-50 rounded-md transition-colors text-base"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
-            <a href="#donate" onClick={(e) => { e.preventDefault(); navigate('/donate'); }} className="mr-2 bg-brand-red text-white px-5 py-2.5 rounded-full flex items-center gap-2 hover:bg-amber-700 transition-colors shadow-sm font-bold text-base">
+            <Link to="/donate" className="mr-2 bg-brand-red text-white px-5 py-2.5 rounded-full flex items-center gap-2 hover:bg-amber-700 transition-colors shadow-sm font-bold text-base">
               <Heart size={16} fill="currentColor" />
               <span>تبرع الآن</span>
-            </a>
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -72,20 +72,20 @@ const Navbar: React.FC = () => {
         <div className="xl:hidden bg-white border-t border-gray-100 py-4 absolute w-full shadow-lg z-50 h-[80vh] overflow-y-auto">
           <div className="flex flex-col space-y-2 px-4">
             {NAV_ITEMS.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.href}
                 className="block px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-brand-blue rounded-md font-medium border-b border-gray-50 last:border-0 text-base"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
             <div className="pt-2">
-                 <button onClick={() => { navigate('/donate'); setIsOpen(false); }} className="w-full bg-brand-red text-white py-3 rounded-lg flex items-center justify-center gap-2 font-bold">
-                    <Heart size={18} fill="currentColor" />
-                    تبرع الآن
-                 </button>
+              <button onClick={() => { navigate('/donate'); setIsOpen(false); }} className="w-full bg-brand-red text-white py-3 rounded-lg flex items-center justify-center gap-2 font-bold">
+                <Heart size={18} fill="currentColor" />
+                تبرع الآن
+              </button>
             </div>
           </div>
         </div>

@@ -31,23 +31,14 @@ const mockResults = [
 
 const CompetitionResultsPage: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState('');
-    const [selectedCategory, setSelectedCategory] = useState('الكل');
     const [searchResult, setSearchResult] = useState<any>(null);
-    const [showLeaderboard, setShowLeaderboard] = useState(true);
-
-    const categories = ['الكل', 'حفظ كامل', '20 جزء', '10 أجزاء', '5 أجزاء'];
 
     const handleSearch = () => {
         const result = mockResults.find(r =>
             r.name.includes(searchTerm) || r.id.toString() === searchTerm
         );
         setSearchResult(result || 'not_found');
-        setShowLeaderboard(false);
     };
-
-    const filteredResults = selectedCategory === 'الكل'
-        ? mockResults
-        : mockResults.filter(r => r.category === selectedCategory);
 
     const getRankIcon = (rank: number) => {
         if (rank === 1) return <Trophy className="text-amber-500" size={32} />;
@@ -135,16 +126,6 @@ const CompetitionResultsPage: React.FC = () => {
                                 بحث
                             </motion.button>
                         </div>
-                        <button
-                            onClick={() => {
-                                setSearchResult(null);
-                                setShowLeaderboard(true);
-                                setSearchTerm('');
-                            }}
-                            className="text-brand-blue hover:underline mt-4 text-sm"
-                        >
-                            العودة إلى لوحة الشرف
-                        </button>
                     </div>
                 </motion.div>
 

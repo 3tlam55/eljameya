@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
       {/* Background Image with Parallax */}
       <motion.div className="absolute inset-0 z-0" style={{ y }}>
         <motion.img
-          src="https://picsum.photos/1920/1080?grayscale&blur=2&random=75"
+          src="components\assets\unnamed.jpg"
           alt="Charity Impact"
           className="w-full h-full object-cover opacity-40"
           initial={{ scale: 1.2 }}

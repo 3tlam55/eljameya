@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-4 cursor-pointer hover:opacity-80 transition-opacity">
             <img
-              src="https://upload.wikimedia.org/wikipedia/ar/2/23/%D8%B4%D8%B9%D8%A7%D8%B1_%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D9%8A%D8%A9_%D8%A7%D9%84%D8%B4%D8%B1%D8%B9%D9%8A%D8%A9.jpg"
+              src="G:\Gam3ya\OLD\hatasystm - Copy\eljameya\components\assets\logo.png.png"
               alt="شعار الجمعية الشرعية"
               className="w-24 h-24 object-contain shrink-0 mix-blend-multiply"
             />

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Heart, HandHeart, ChevronLeft, Sparkles } from 'lucide-react';
-import heroImage from './assets/unnamed.jpg';
+const heroImage = '/assets/unnamed.jpg';
 
 const Hero: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);

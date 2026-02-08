@@ -1,0 +1,9 @@
+/* Global styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+ * This file is referenced in index.html. 
+ * Even if empty, it should exist to prevent 404 errors. 
+ */

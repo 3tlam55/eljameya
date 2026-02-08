@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4 py-2">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center gap-4">
+          <Link to="/" className="flex items-center gap-4 cursor-pointer hover:opacity-80 transition-opacity">
             <img
               src="https://upload.wikimedia.org/wikipedia/ar/2/23/%D8%B4%D8%B9%D8%A7%D8%B1_%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D9%8A%D8%A9_%D8%A7%D9%84%D8%B4%D8%B1%D8%B9%D9%8A%D8%A9.jpg"
               alt="شعار الجمعية الشرعية"
@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
               <h1 className="text-xl md:text-2xl font-bold text-brand-blue leading-none">الجمعية الشرعية</h1>
               <span className="text-xs text-gray-600 font-semibold tracking-wider mt-1">لتعاون العاملين بالكتاب والسنة</span>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Menu */}
           <nav className="hidden xl:flex items-center gap-2">

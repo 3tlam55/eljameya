@@ -218,7 +218,8 @@ const ProjectsSection: React.FC = () => {
           className="mt-10 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true }}40000,
+          
           transition={{ delay: 0.8, duration: 0.6 }}
         >
           <motion.button

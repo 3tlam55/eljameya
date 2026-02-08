@@ -182,7 +182,9 @@ const ContactPage: React.FC = () => {
                             <h3 className="text-2xl font-bold text-brand-blue mb-6">تابعنا على</h3>
                             <div className="grid grid-cols-4 gap-4">
                                 <motion.a
-                                    href="#"
+                                    href="https://www.facebook.com/alsharyiaashmoun"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="bg-blue-600 text-white p-4 rounded-xl flex items-center justify-center hover:bg-blue-700 transition-colors"
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.95 }}
@@ -213,6 +215,23 @@ const ContactPage: React.FC = () => {
                                 >
                                     <Youtube size={28} />
                                 </motion.a>
+                            </div>
+                        </div>
+
+                        {/* Facebook Page Plugin */}
+                        <div className="bg-white rounded-2xl shadow-xl p-8">
+                            <h3 className="text-2xl font-bold text-brand-blue mb-6">تابعنا على فيسبوك</h3>
+                            <div className="w-full overflow-hidden rounded-lg">
+                                <iframe
+                                    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Falsharyiaashmoun&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                                    width="340"
+                                    height="500"
+                                    style={{ border: 'none', overflow: 'hidden', width: '100%' }}
+                                    scrolling="no"
+                                    frameBorder="0"
+                                    allowFullScreen={true}
+                                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                                ></iframe>
                             </div>
                         </div>
                     </motion.div>

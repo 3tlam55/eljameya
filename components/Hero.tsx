@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Heart, HandHeart, ChevronLeft, Sparkles } from 'lucide-react';
+import heroImage from './assets/unnamed.jpg';
 
 const Hero: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -59,7 +60,7 @@ const Hero: React.FC = () => {
       {/* Background Image with Parallax */}
       <motion.div className="absolute inset-0 z-0" style={{ y }}>
         <motion.img
-          src="components\assets\unnamed.jpg"
+          src={heroImage}
           alt="Charity Impact"
           className="w-full h-full object-cover opacity-40"
           initial={{ scale: 1.2 }}

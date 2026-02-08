@@ -24,6 +24,7 @@ import ContactPage from './components/pages/ContactPage';
 import QuranCompetitionPage from './components/pages/QuranCompetitionPage';
 import CompetitionResultsPage from './components/pages/CompetitionResultsPage';
 import ScrollToTop from './components/ScrollToTop';
+
 import { Heart, Phone } from 'lucide-react';
 
 const HomePage: React.FC = () => {
@@ -54,6 +55,7 @@ const HomePage: React.FC = () => {
 
         <TestimonialsSection />
         <ContactSection />
+
       </main>
       <Footer />
       <ChatWidget />

@@ -34,13 +34,13 @@ const HomePage: React.FC = () => {
       <main className="flex-grow">
         <Hero />
 
-        {/* Urgent Ticker */}
-        <div className="bg-brand-gold text-gray-900 py-2 overflow-hidden relative font-bold">
-          <div className="container mx-auto px-4 flex items-center">
-            <span className="bg-brand-red text-white px-3 py-1 rounded text-sm ml-4 shadow-sm z-10 shrink-0">
+        {/* Urgent Ticker - Minimalist Design */}
+        <div className="bg-gradient-to-r from-brand-red to-amber-600 text-white py-3 overflow-hidden relative">
+          <div className="container-custom flex items-center gap-3">
+            <span className="bg-white text-brand-red px-4 py-1.5 rounded-full text-sm font-bold shrink-0 shadow-md">
               عاجل
             </span>
-            <div className="whitespace-nowrap animate-marquee flex gap-16 text-sm">
+            <div className="whitespace-nowrap animate-marquee flex gap-12 text-sm md:text-base font-medium">
               <span>مطلوب 50 كيس دم فصيلة O+ لمجمع الإصلاح الطبي.</span>
               <span>حملة إطعام قرية كاملة يوم الجمعة القادم - شارك معنا.</span>
               <span>بدء استقبال طلبات الأطراف الصناعية لشهر الحالي.</span>

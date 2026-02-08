@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Menu, X, Search, Facebook, Twitter, Youtube, Instagram, Heart } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 import { NAV_ITEMS } from '../constants';
+import logo from './assets/logo.png.png';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +31,7 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-4 cursor-pointer hover:opacity-80 transition-opacity">
             <img
-              src="G:\Gam3ya\OLD\hatasystm - Copy\eljameya\components\assets\logo.png.png"
+              src={logo}
               alt="شعار الجمعية الشرعية"
               className="w-24 h-24 object-contain shrink-0 mix-blend-multiply"
             />

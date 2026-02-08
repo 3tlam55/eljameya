@@ -74,8 +74,8 @@ const ProjectsSection: React.FC = () => {
               key={cat}
               onClick={() => setActiveCategory(cat)}
               className={`px-5 py-2 rounded-full text-sm font-bold transition-all border ${activeCategory === cat
-                  ? 'bg-brand-blue text-white border-brand-blue shadow-lg'
-                  : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50 hover:border-brand-blue/50'
+                ? 'bg-brand-blue text-white border-brand-blue shadow-lg'
+                : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50 hover:border-brand-blue/50'
                 }`}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
@@ -218,8 +218,7 @@ const ProjectsSection: React.FC = () => {
           className="mt-10 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}40000,
-          
+          viewport={{ once: true }}
           transition={{ delay: 0.8, duration: 0.6 }}
         >
           <motion.button
